@@ -2,15 +2,16 @@ import json
 datos=[]
 election=0
 on=0
-tipo=None
+comida=None
 numero=None
-def datos_de_evento(nombre,apellido,numero,direccion,tipo,fecha):
+def datos_de_evento(nombre,apellido,numero,direccion,tipo,comida,fecha):
     evento={
         "nombre":nombre,
         "apellio":apellido,
         "numero":numero,
         "direccion":direccion,
         "tipo":tipo,
+        "comida":comida,
         "fecha":fecha
         }
     datos.append(evento)
@@ -38,7 +39,7 @@ while on==0:
             except ValueError:
                 print(" Ingrese un numero telefonico de 10 digitos ")
             print("----- Numero ingresado telefonico -----")
-        while tipo==None:
+        while comida==None:
             print("""----- Seleccione el tipo de comida -----
                   1)comida italianada
                   2)comida japonesa
@@ -49,21 +50,23 @@ while on==0:
             except:
                 print(" solo se permiten numeros enteros del menu ")
             if election==1:
-                tipo="camida italina"
+                comida="camida italina"
                 print("----- Se agrego el tipo de comida -----")
             elif election==2:
-                tipo="comida japonesa"
+                comida="comida japonesa"
                 print("----- Se agrego el tipo de comida -----")
             elif election==3:
-                tipo="BBQ"
+                comida="BBQ"
                 print("----- Se agrego el tipo de comida -----")
             else:
                 print(" no se encontro ese tipo de comida ")
         direccion=input(" Ingrese direcion ")
         print("----- Direccion ingresada -----")
         fecha=input(" Ingrese fecha ")
-        print("----- Fache ingresada -----")
-        datos_de_evento(nombre,apellido,numero,direccion,tipo,fecha)
+        print("----- Fecha ingresada -----")
+        tipo=input(" Imgrese tipo de evento ")
+        print("----- Se a ingresado el tipo de evento -----")
+        datos_de_evento(nombre,apellido,numero,direccion,tipo,comida,fecha)
         print(" Pedido registrado ")
 
     elif election==2:
