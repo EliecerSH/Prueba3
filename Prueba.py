@@ -79,4 +79,5 @@ while on==0:
         with open('RegistroDeEvento.json','r') as file:
             datos=json.load(file)
     elif election==5:
+        on=1
         print("-----Termino de proceso -----")
